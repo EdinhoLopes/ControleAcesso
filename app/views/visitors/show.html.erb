@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @visitor.name %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @visitor.cpf %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @visitor.phone %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @visitor.sector %>
+</p>
+
+<p>
+  <strong>Usersector:</strong>
+  <%= @visitor.usersector %>
+</p>
+
+<p>
+  <strong>Attendant:</strong>
+  <%= @visitor.attendant %>
+</p>
+
+<%= link_to 'Edit', edit_visitor_path(@visitor) %> |
+<%= link_to 'Back', visitors_path %>
