@@ -1,4 +1,4 @@
-<%= form_with(model: visitor, local: true) do |form| %>
+<%= simple_form_for visitor do |form| %>
   <% if visitor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(visitor.errors.count, "error") %> prohibited this visitor from being saved:</h2>
@@ -11,37 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :visitor_name %>
-  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6"> 
+      <%= form.input :name, class:"form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.input :cpf, class:"form-control" %>
+    </div>  
+  </div>  
 
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf, id: :visitor_cpf %>
-  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6"> 
+      <%= form.input :phone, class:"form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.input :sector, class:"form-control" %>
+    </div>  
+  </div> 
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :visitor_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sector %>
-    <%= form.text_field :sector, id: :visitor_sector %>
-  </div>
-
-  <div class="field">
-    <%= form.label :usersector %>
-    <%= form.text_field :usersector, id: :visitor_usersector %>
-  </div>
-
-  <div class="field">
-    <%= form.label :attendant %>
-    <%= form.text_field :attendant, id: :visitor_attendant %>
-  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6"> 
+      <%= form.input :usersector, class:"form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.input :attendant, class:"form-control" %>
+    </div>  
+  </div> 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.button :submit, class:"btn btn-primary" %>
   </div>
 <% end %>
